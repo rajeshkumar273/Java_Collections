@@ -1,0 +1,304 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+
+Strings under import java.util.lang;
+
+StringBuffer  under import java.util.lang;
+
+FileReader ---> java io
+
+String s=new String("Durga");
+Thread t=new Thread();
+Exception e=new Exception();
+StringBuffer sb=new StringBuffer("Rajesh");
+
+
+import java.util.ArrayList;  
+import java.util.Arrays;  
+import java.util.List;  
+
+if class is abstract then object creation is not possible.
+
+how the JVM can decides whether object creation is possible or not.  simply based on abstract modifier.
+
+object creation is also known as instantiation.(instantiation)
+
+If the class is a final child class creation is possible.
+
+If the class is not a final child class creation is possible.
+
+Abstract method has only declaration but not implementation.
+
+child class are responsible to provide implementation. (Like RBI Interest)
+
+Abstract methods are possible 
+
+Abstract classes are possible
+
+but abstract variables are not possible 
+
+
+if a class contain atleast one abstract method compulsory we have to declare as abstract.otherwise it gives syntax error.
+
+
+abstract methods having only declaration but not implementation
+
+for abstract classes it is not possible to create objects.
+
+The simple advantage is every child class of vehicle should compulsory provide implementation for get no.of wheels if you have such type of programming is there then declare abstract method.
+
+If not taken abstract method in the parent class or vehicle class child class may provide implementation or may not provide implementaion.
+
+Member means it may be variable or it may be a method.
+
+To compile package:
+-------------------
+
+javac -d. A.java
+javac -d. B.java
+java pack2.B
+
+default modifier access is also called package level access.
+
+private --> Within the class Level
+
+default --> within package level
+
+public --> Global Level
+
+protected --> we can access within the current package but from outside package only in child classes.
+
+
+
+private < default < protected < public  
+
+The biggest advantage of data hiding is security.
+
+Abstraction means --> Hiding internal implementation just highlight the set of services what we offer or provide.
+
+ATM   GUI Screens--> We services we know but we don't know where the data come and go.
+
+
+Encapsulation=Data hiding + Abstract
+
+	If any component follows Data hiding + Abstraction that component is said to be Encapsulated component.
+
+
+Advantages 
+
+	Security
+	Enhancement
+	Maintainability
+	Modularity
+
+For Example SBI Bank --> Time Consuming but Advantage is Right Person.
+
+If you want something you should miss something.
+
+Time consuming means Performance is going to down.
+
+Lenght of the code is increased because of validation so use it only when required.
+
+Tightly Encapsulated class
+--------------------------
+
+	Every class in java is by default consider as Encapsulated class.
+
+	When we say that it is tightly Encapsulated if and only if(iff) every variable present inside that class is private such type of class is said to be Tightly Encapulated class.
+
+	class A {
+
+		private int x=10; //Tightly Encapsulated class
+	}
+
+	class B extends A {
+
+		int y =20;  // Not Tightly Encapsulated Class
+
+	} 
+
+If the Parent class is not Tightly Encapsulated then no child Class is Tightly Encapsulated.
+
+Inheritance
+-----------
+
+	Is-a Relation
+	Code Re-usability 
+	extends 
+
+P p      =new P();
+
+parent reference= parent object
+
+
+P p()    = new C();
+parent reference can be used to hold child class object.
+
+parent reference is used to hold child object.
+
+but child reference is not used to hold parent object.
+
+Which class acts as root for all java classes. Ans: Object class
+----------------------------------------------------------------
+object
+
+String StringBuffer Numbers Math Thowable
+					
+Which class acts as root for java Exception Hierarchy --> Throwable 
+
+cyclic inheritanc is not supported anywhere because it is really not required.
+
+Method Signature
+----------------
+
+Method signature contain method name followed by argument.
+
+public int m1(int i, float f) 
+
+m1(int,float) --> called Method Signature.
+
+in other languages return type is a part of method signature but not in java.
+
+who is going to use method signarure
+------------------------------------
+complier will use method signature while resolving method calls.
+
+Two methods having same signature is not yet all acceptable. within the class two methods with same signature is not allowed.  
+If you are trying define you will get complie time error even though return types are different.
+
+class Test {
+
+	public void m1(int i) {            --> m1(int)
+		
+		return 6;
+
+		}
+
+	public int m1(int j) {             -->m1(int)
+
+
+		return 10;
+	
+		} 
+
+	Test t=new Test();
+	t.m1(10);
+
+Method Overloading
+------------------
+
+Same method name but having different parameters is said to be method overloading.
+
+	static polymorphism
+		(or)
+	complie Time polymorphism
+		(or)
+	Early binding
+
+
+	
+byte --> short --> int -->long --> float --> double --> 
+		    |					
+		   char
+
+In overloading method resolution if exact matched method is not avaliable complier won't raise complie time error immediately. First it will promte argument to next level and it will check is there any matched is avaliable or not.
+
+If it is avaliable it will get chance. if it is not avaliable again promting to the next level. All possible promotions are completed still no matched method then only we get complie time error. This is called Automatic promotion in overloading.
+
+overriding
+----------
+	If child class is not satisfied with parent method implementation that particular method child class is allowed to redefined.
+
+	Run Time Polymorphism
+		(or)
+	Dynamic Polymorphism
+		(or)
+	Late Binding
+ 
+The parent class has overridden method
+The child class method is called overriding method.
+
+Complier always check parent class method avaliable or not.
+
+In the Run time, JVM always check child class is overriding.
+
+case 1:
+
+	--> Private methods not applicable for overriding. Because there is no relation between two class. (No Access to  Outside methods).
+
+	--> But Based on our requirement  we can define private methods in parent and child classes.
+
+Even if you take child class is final in this case still complie time error. Once it is final once no need chance overridding immediately
+it will get complie time error.
+
+case 2:
+
+	while overriding, we can't reduce scope of access modifier but if you want you can increase scope.
+
+	private < default < protected < public 	
+
+class P {
+
+	public static void m1() {
+
+		S.o.p("Parent"); 
+	}
+
+}
+
+class C extends P {
+
+	public static void m1() {
+
+		S.o.p("Child");
+	}
+
+}
+
+It is not overriding it is method hiding.
+
+
+class Test {
+
+	public static void main(String [] args) {
+
+		P p=new P();
+		p.m1();
+		
+		C c=new C();
+
+		p.m1();
+
+		P p=new P();
+
+}
+
+}
+
+
+if both parent & child class methods are static then it become method hiding.
+
+if both are not static it become method overriding.
+
+			Overloading  	  	Overriding
+	
+method names		must be same		must be same
+
+argument		must be different	must be same
+			(Atleast order)		(including order)
+
+private/final/
+static methods		can be overloaded 	cannot be overridden
+
+	
+
+
+
+
+
+
+
+
+
+

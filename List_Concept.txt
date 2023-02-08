@@ -1,0 +1,10 @@
+creation of a list
+Addition of elements into the list
+Retrieval of elements from the list
+Deletion of elements from the list
+Verification of elements in the list
+Updation of elements in the list
+
+
+Java List vs ArrayList
+List is an interface whereas ArrayList is the implementation class of List.
